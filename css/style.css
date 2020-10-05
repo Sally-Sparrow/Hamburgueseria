@@ -423,3 +423,38 @@ main #aboutus .columna:hover .marco, main #aboutus .columna:hover .marco img{
 
 /* ------ BLOG ------ */
 
+main #blog .row{  
+    flex-wrap: wrap;
+}
+
+main #blog article{
+    width: 50%;
+    padding: 1.825em 0;
+}
+
+main #blog article:nth-child(odd){
+    padding-right: 0.5em;
+}
+main #blog article:nth-child(even){
+    padding-left: 0.5em;
+}
+
+main #blog article>div{
+    position: relative;
+}
+
+main #blog article div .date{
+    position: absolute;
+    background-color: var(--color-principal);
+    opacity: 0.8;
+    height: 4em;
+    width: 4em;
+    top: 0em;
+}
+
+main #blog article div .date p{
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    
+}
