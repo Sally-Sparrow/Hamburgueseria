@@ -456,5 +456,28 @@ main #blog article div .date p{
     color: white;
     font-size: 1.2em;
     text-align: center;
+    padding: 0.6em;
     
+}
+
+main #blog article h3{
+    font-size: 1.4em;
+    /* padding: 1em, 0;  por que cojones */
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+main #blog article p{
+    padding-bottom: 1em;
+}
+
+main #blog article p:first-of-type{
+    color: var(--color-principal);
+}
+
+main #blog article .enlace{
+    display: inline;
+}
+main #blog article i{
+    color: var(--color-principal);
 }
