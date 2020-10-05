@@ -481,3 +481,16 @@ main #blog article .enlace{
 main #blog article i{
     color: var(--color-principal);
 }
+
+/* desktop */
+@media(min-width: 62.750em ){
+    main #blog article{
+        width: 33.333%;
+    }
+
+    main #blog article:nth-child(odd){
+        padding-left: 0.5em;
+    }
+    main #blog article:nth-child(even){
+        padding-right: 0.5em;
+    }
