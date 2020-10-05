@@ -1,0 +1,421 @@
+/* 1 IMPORTAR RESET CSS desde aqui, asi index solo tiene que llamar a una hoja */
+@import url(./reset.css);
+
+/* 2. IMPORTAR FUENTES que se vayan a utilizar */
+/* Es recomendable utilizar fuentes de google fonts para evitar problemas de licencias */
+
+/* COPIAR esto tambien, para tenerlo a mano y llamar a la fuente tambien */
+/* font-family: 'Handlee', cursive;
+font-family: 'Montserrat', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:wght@400;700&display=swap');
+
+/* 3. IMPORTAR LIBRERIA DE ICONOS (te la buscas)*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+
+/* Como ya no hay que hacer reset, lo unico que queda es elegir el modelo de caja y aplicar a todos los elementos. para que el borde y el padding crezcan hacia dentro, se usa box sizing */
+*{
+    box-sizing: border-box;
+}
+
+/* 4. DECLARAR VARIABLES */
+:root{
+    --color-principal: #fa573a;
+    --color-secundario: #21242e;
+    --fuente-principal: 'Montserrat', sans-serif;
+    --fuente-secundaria: 'Handlee', cursive;
+    /* encorsar contenido, que no fondos claro */
+    --ancho-maximo: 1100px;
+    --gris: #aaa;
+    /* media queries no admiten variables */
+}
+
+/* 5. DEFINIR COSAS GENERICAS DE LA PAGINA */
+
+/* se define la fuente basica de body y el tamaño en em, para que el usuario "elija" */
+body{
+    font-family: var(--fuente-principal);
+    font-size: 1em;
+}
+
+/* Como siempre que se trabaja responsive, las imagenes: */
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Definimos el ancho del contenido encorsetado, para todo a lo que apliquemos clase container */
+.container{
+    margin: 0 auto;
+    max-width: var(--ancho-maximo);
+}
+
+/* Container fluid seria reiterativo, como se han reseteado los margenes a 0, cualquier div ocupa el 100% ya */
+
+.row{
+    display: flex;
+    /* no se pone flex-wrap por que a veces se usara flex y otras veces wrap, pues ya lo pones, si no lo quieres te vale con el generico, .row */
+}
+
+/* 6. EMPEZAR MAQUETACION DE HEADER */
+
+/* 7. DAR ESTILO A HEADER */
+
+header .nav_top{
+    background-color: var(--color-secundario);
+    padding: 20px 10px; 
+}
+header .nav_top a{
+    color: white;
+    font-size: 120%;
+    text-decoration: none;
+}
+header .nav_top a i{
+    color: var(--color-principal);
+}
+
+/* no se ve el texto de los iconos en movil */
+header .nav_top a span{
+    display:none;
+}
+
+/* espaciar los iconos equidistantes en todo el ancho */
+header .nav_top .row{
+    justify-content: space-between;
+}
+    /* fin navtop (azul) */
+
+    /* nav (parte blanca) */
+header nav{
+    padding: 20px 10px;
+}  
+
+header .hamburguesa{
+    width: 50px;
+    cursor: pointer;
+}
+/* rayas de la hamburguesa */
+header .hamburguesa div{
+    border-top: 2px solid var(--gris);
+    /* como sale uno encima de otro (al no tener contenido se juntan)se mete un margen para que se separen */
+    margin: 10px;
+}
+
+header nav .row{
+    /* ahora si hace falta, porq quieres decidir cuanto ocupa cada caja */
+    flex-wrap: wrap;
+    /* primero reparte el espacio */
+    justify-content: space-between;
+}
+
+/* como ul no cabe porq esta al 100%, baja abajo */
+header nav ul{
+    width: 100%;
+}
+
+/* ajustar tamaño del logo, como se ajusta a su contenedor, ajustar el contenedor */
+header nav .logo{
+    max-width: 110px;
+}
+
+header nav ul li a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+    color: var(--gris);
+    border-bottom: 1px solid var(--gris);
+}
+
+header nav ul li a:hover{
+    color: var(--color-principal);
+}
+
+/* para que al aplicar esta clase al html de cada seccion en la que estemos y se quede marcado */
+header nav ul li .activo{
+    color: var(--color-principal);
+}
+
+/* responsive header tablet*/
+@media(min-width: 48em){
+    header .nav_top a span{
+        display: inline;
+    }
+}
+
+/* responsive header desktop */
+@media(min-width: 62.750em ){
+    header .hamburguesa{
+        display: none;
+    }
+
+    /* ajustar su width al tamaño que le deja rovers */
+    header nav ul{
+        width: auto;
+    }
+
+    header nav ul li{
+        display: inline-block;
+    }
+
+    header nav ul li a{
+        padding: 5px 20px;
+        border: none;
+    }
+}
+
+/* FIN DE HEADER */
+
+
+/* FOOTER */
+footer{
+    background-color: var(--color-secundario);
+    padding: 20px 10px;
+    color: white;
+    /* En movil esta centrado */
+    text-align: center;
+    position: fixed;
+    /* al cambiar la posicion hay que definir: (sale de su contenedor y pierde su ancho) */
+    width: 100%;
+    /* y para que se separe de lo de arriba */
+    margin-top: 20px;
+    bottom: 0px;
+}
+footer a{
+    color: white;
+}
+footer a:hover{
+    text-decoration: none;
+}
+
+@media(min-width: 48em){
+    footer{
+        text-align: left;
+    }
+}
+
+/* FIN DEL FOOTER */
+
+/* MAIN HOME */
+.hero{
+    background-image: url("../images/fondo.jpg");
+    background-color:#999;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    padding: 15% 10px;
+}
+
+.hero h1{
+    font-family: var(--fuente-secundaria);
+    color: white;
+    font-size: 2.500em;
+}
+.hero h2{
+    color: var(--color-principal);
+    font-size: 1.500em;
+    margin: 1em 0;
+}
+
+.hero p{
+    color: white;
+    font-size: 1.100em;
+}
+
+.boton{
+    display: inline-block;
+    background-color: var(--color-principal);
+    color: white;
+    padding: 1.150em;
+    text-decoration: none;
+    margin: 1em 0;
+    /* es el borde que no se ve cuando esta relleno, pero se vera al hover */
+    border: 1px solid var(--color-principal);
+}
+/* animacion de la flecha del boton al hacer hover */
+.boton:hover{
+    background-color: transparent;
+    color: var(--color-principal);
+    /* si se pone el borde aqui, al añadir un borde que no estaba crece y se desplaza */
+}
+/* animación de la flecha */
+.boton i{
+    /* si pones la transicion aqui hace la animacion de ida y de vuelta */
+    transition: 0.5s;
+}
+
+.boton:hover i{
+    transform: translateX(10px);
+}
+/* fin de la animacion */
+
+.hero ul li{
+    display: inline-block;
+    font-size: 2em;
+    margin-right: 1em;
+}
+
+.hero ul li a{
+    color: white;
+}
+
+/* MAIN */
+/* section our service */
+
+/* h2 */
+main section{
+    padding: 2.125em 0.825em;
+}
+
+main section h2{
+    color: black;
+    font-family: var(--fuente-secundaria);
+    font-size: 2em;
+    text-align: center;
+}
+
+main section h2 span{
+    color: var(--color-principal);
+}
+
+main section .underline{
+    /* a la caja no le afecta porq no hay top, left... */
+    position: relative;
+    /* fijando el ancho del contenedor acortamos la linea */
+    width: 5em;
+    margin: 0 auto;
+    color: var(--color-principal);
+    font-weight: 700;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+main section .underline hr{
+    position: absolute;
+    /* al salir de la capa pierde su ancho, y no se ve, hay que decirle que ocupe el 100 de su contenedor  */
+    width: 100%;
+    top: -1px;
+    border-color: var(--color-principal);
+}
+/* fin h2 */
+/* articulos */
+
+ main #ourservice .row{  /* no te la juegas si no sabes como son los demas */
+    flex-wrap: wrap;
+}
+
+main #ourservice article{
+    border-bottom: 1px solid var(--gris);
+    padding: 1.825em 0;
+}
+
+main #ourservice article div i{
+    color: var(--color-principal);
+    font-size: 2em;
+    border: 2px solid var(--color-principal);
+    padding: 0.8rem; /* rem para que no herede de font size*/
+}
+
+main #ourservice article .fa-truck{
+    transform: rotateY(180deg);
+}
+
+main #ourservice h3{
+    margin: 1em 0;
+    font-weight: 700;
+}
+
+.enlace{
+    display: block;
+    text-decoration: none;
+    color: var(--color-principal);
+    margin: 1em 0 0 0;
+}
+
+/* tablet */
+@media(min-width: 48em){
+    main #ourservice article{
+        width: 50%;
+        border-bottom: none;
+        border-left: 1px solid var(--gris);
+        padding: 1.825em;
+        margin-bottom: 1em;
+    }
+    main #ourservice article:last-child{
+        width: 100%;
+    }
+}
+
+/* desktop */
+@media(min-width: 62.750em ){
+    main #ourservice article{
+        width: 33.333%;
+    }
+    main #ourservice article:last-child{
+        /* se puede usar esto gracias al boxsizing, si no habria que haber restado padding */
+        width: 33.333%;
+    }
+
+}
+/* fin main section our services */
+
+
+/* main section about us */
+
+/* para separar el boton de abajo del footer, que esta fijo */
+main #aboutus{
+    padding-bottom: 100px;
+}
+
+main #aboutus .row{
+    flex-wrap: wrap;
+}
+
+main #aboutus h3{
+    font-weight: 700;
+}
+
+main #aboutus h4{
+    margin: 1em 0;
+    color: var(--color-principal);
+
+}
+
+main #aboutus .marco{
+    margin: 15px 0;
+    border: 3px solid var(--color-principal);
+    /* animacion */
+    transform: rotateZ(10deg);
+    /* he bajado el ancho para evitar que se superponga al rotar */
+    width: 90%; 
+    transition: 1s;
+}
+
+main #aboutus .marco img{ 
+    /* animacion */
+    transform: rotateZ(-10deg);
+    transition: 1s;
+}
+/* el hover tiene que ser sobre el contenedor de ambos, marco e img */
+main #aboutus .columna:hover .marco, main #aboutus .columna:hover .marco img{
+    transform: rotateZ(0deg);
+}
+
+
+/* tablet */
+@media(min-width: 48em){
+    main #aboutus .marco{
+        margin: 0px 15px;
+    }
+    main #aboutus .columna:first-child{
+        width: 40%;
+    }
+    main #aboutus .columna:last-child{
+        width: 60%;
+    }
+}
+
+/* fin seccion our service */
+
+

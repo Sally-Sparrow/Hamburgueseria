@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburguesería</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <!-- tiene dos contenedores, que no son section por que no definen contenido, asiq div el azul (no estan relacionados) y el blanco nav (es un menu) -->
+             <div class="nav_top"> <!--esta es la caja azul, que es fluid -->
+                <div class="container row"> <!-- ????? -->
+                    <div>
+                        <a href="#">
+                            <i class="fas fa-envelope"></i>
+                            <span>rover@gmail.com</span> <!-- ayuda para quitarlo en movil-->
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="fas fa-phone"></i>
+                            <span>xx xxx xx xx</span> <!-- ayuda para quitarlo en movil-->
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Shopping cart</span> <!-- ayuda para quitarlo en movil-->
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Account</span> <!-- ayuda para quitarlo en movil-->
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- El nav tiene tres estructuras: el logo, el menu, el icono de hamburguesa -->
+            <nav>
+                <div class="container row"> <!--se le aplica row porq sera flexible-->
+                    <div class="logo">
+                        <!-- El logo suele ser enlace a home -->
+                        <a href="index.html">
+                            <img src="./images/logo.jpg" alt="rovers hamburgueseria logo">
+                        </a>
+                    </div>
+                    <div class="hamburguesa">
+                        <!-- usa div para hacer las lineas de cara a animarlo despues -->
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul>
+                        <li><a class="activo" href="index.html">Home</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Menú</a></li>
+                        <li><a href="">item 4</a></li>
+                        <li><a href="">contacto</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+<!-- MAIN -->
+        <!-- (al final del header es buena idea hacerse una copia plantilla, para usar en el resto de secciones del menu) -->
+       
+       <div class="hero">
+           <div class="container">
+               <h1>Las mejores hamburguesas del mundo</h1>
+               <h2>Bienvenido a nuestra hamburguesería</h2>
+               <p>Come a partir de 15€</p>
+               <div>
+                   <!-- se podria hacer por herencia, pero como hay mas diseños iguales se le pone una clase -->
+                   <a class="boton" href="#"> Nuestra carta
+                       <i class="fas fa-long-arrow-alt-right"></i>
+                   </a>
+               </div>
+               <ul>
+                   <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                   <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                   <li><a href=""><i class="fab fa-instagram"></i></a></li>
+               </ul>
+           </div>
+       </div>
+<!-- MAIN -->
+        <main>
+            <!-- en otro caso el h1 iria antes de la seccion (como contacto) si no esta en el diseño lo escondes -->
+            <!-- id para uso personal, para identificar la seccion -->
+            <section id="ourservice" class="container">
+                <h2>Our <span>Service</span></h2>
+                <div class="underline">
+                    <!-- noshade quita el efecto bisel de hr -->
+                    <hr noshade="">
+                    <span>X</span>
+                </div>
+                <div class="row">
+                    <article>
+                        <div>
+                           <i class="fas fa-cogs"></i> 
+                        </div>
+                        <h3>1. Título del servicio</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis eos illo assumenda. Aut delectus minus impedit quis nihil vero sint.</p>
+                        <!-- clase enlace para usarlo mas adelante -->
+                        <a class="enlace" href="#">Leer más</a>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </article>
+                    <article>
+                        <div>
+                           <i class="fas fa-truck"></i> 
+                        </div>
+                        <h3>2. Título del servicio</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis eos illo assumenda. Aut delectus minus impedit quis nihil vero sint.</p>
+                        <!-- clase enlace para usarlo mas adelante -->
+                        <a class="enlace" href="#">Leer más</a>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </article>
+                    <article>
+                        <div>
+                           <i class="fas fa-heart"></i> 
+                        </div>
+                        <h3>3. Título del servicio</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis eos illo assumenda. Aut delectus minus impedit quis nihil vero sint.</p>
+                        <!-- clase enlace para usarlo mas adelante -->
+                        <a class="enlace" href="#">Leer más</a>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </article>
+                </div>
+            </section>
+
+            <section id="aboutus" class="container">
+                <h2>About <span>Us</span></h2>
+                <div class="underline">
+                    <!-- noshade quita el efecto bisel de hr -->
+                    <hr noshade="">
+                    <span>X</span>
+                </div>
+
+                <article class="row">
+                    <div class="columna">
+                        <div class="marco">
+                            <img src="./images/about-main.jpg" alt="nuestra chef">
+                        </div>
+                    </div>
+                    <div class="columna">
+                        <h3>The History</h3>
+                        <h4>Our restaurant</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis molestiae voluptas recusandae alias atque praesentium saepe, assumenda magni, consectetur, quidem dolores perferendis consequatur illo repellendus.</p>
+                        <div>
+                            <a class="boton" href="#"> Leer más
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+        </main>
+<!-- FOOTER -->
+        <footer>
+            <div class="container">
+                <p>Copyright &copy; 2020 - <a href="#">Aviso legal - </a><a href="#">Cookies</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
