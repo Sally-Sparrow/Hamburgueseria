@@ -494,3 +494,23 @@ main #blog article i{
     main #blog article:nth-child(even){
         padding-right: 0.5em;
     }
+
+  /* Fin de la sección blog */
+
+
+
+
+
+    /* ------ MENU ------ */
+
+.fondoSecundario{
+    background-color: var(--color-secundario);
+}
+#menu{
+    background-color: var(--color-secundario);
+}
+/* h2 menu */
+
+main #menu h2{
+    color: white;
+}
