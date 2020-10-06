@@ -570,3 +570,26 @@ main #menu article i{
     color: var(--color-principal);
 }
 
+/* desktop */
+@media(min-width: 62.750em ){
+    
+    main #menu .row aside{
+        width: 30%;
+    }
+
+    main #menu .row div{
+        width: 60%;
+    }
+
+    main #menu .row div article div:first-child{
+        width: 25%;
+        padding-right: 2em;
+        padding-top: 1.5em;
+    }
+
+    main #menu .row div article div:last-child{
+        width: 75%
+    }
+    
+}
+  /* Fin de la sección menu */
