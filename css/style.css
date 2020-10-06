@@ -494,7 +494,7 @@ main #blog article i{
     main #blog article:nth-child(even){
         padding-right: 0.5em;
     }
-
+}
   /* Fin de la sección blog */
 
 
@@ -502,15 +502,71 @@ main #blog article i{
 
 
     /* ------ MENU ------ */
-
 .fondoSecundario{
     background-color: var(--color-secundario);
+    color: white;
 }
-#menu{
-    background-color: var(--color-secundario);
-}
-/* h2 menu */
+
+ main #menu{
+    padding: 2em;
+} 
 
 main #menu h2{
     color: white;
 }
+
+main #menu aside{
+    padding-bottom: 2em;
+}
+
+main #menu aside nav{
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+main #menu aside nav li{
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+main #menu aside nav li:hover{
+    background-color: var(--color-principal);
+}
+
+main #menu aside div p:first-child{
+   font-weight: 700; 
+}
+
+main #menu aside div hr{
+    width: 5em;
+    color: var(--color-principal);
+    display: inline-block;
+    text-align: left;
+}
+main #menu .row{  
+    flex-wrap: wrap;
+}
+
+main #menu article{
+    width: 90%;
+    padding-left: 1.5em;
+}
+
+main #menu article h3{
+    font-weight: 700;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+main #menu article h3 span{
+    color: var(--color-principal);
+}
+
+main #menu article .enlace{
+    display: inline-block;
+    padding-bottom: 2em;
+}
+
+main #menu article i{
+    color: var(--color-principal);
+}
+
